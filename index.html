@@ -8,43 +8,72 @@
     <link rel="icon" type="img/png" sizes="32x32" href="/images/favicon-32x32.png">
     <title>QRNow | Generates QR code for free</title>
 </head>
-<body>
+<body class="container">
     
-<header>
+<header class="header flex">
     <!--logo-->
-    <small>QRNow</small>
+    <b class="logo">QRNow</b>
     <!--navbar-->
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <ul class="navbar__list">
             <li><a href="#">Product</a></li>
             <li><a href="#">FAQs</a></li>
             <li><a href="#">Contact us</a></li>
         </ul>
-        <button>Get Started</button>
+        
     </nav>
+    <button class="btn desktop">Get Started</button>
 </header>
 
-<main>
-    <h1>QRNow, free and easy QR Code Generator</h1>
+<main class="main">
+    <h1 class="main__title">QRNow, free and easy QR Code Generator</h1>
 
-    <section>
-        <article>
-            <h2>Content</h2>
-            <form>
-                <label for="url">Website (URL)</label>
-                <input type="text" name="url">
+    <section class="generator">
+       <div class="generator__img">
+        <img alt="" src="/images/hero.jpg">
+       </div>
+       <div class="grid generator__inner">
+        <article class="generator__wrapper">
+            <h2 class="generator__content">URL</h2>
+            <form class="generator__form grid">
+                <label for="url"></label>
+                <input type="url" name="url" placeholder="Enter website (URL)">
             </form>
         </article>
 
         <article>
-            <h2>Customization</h2>
-            <div>
-                <div>Size</div>
-                <div>Color</div>
-                <div>Background Color</div>
-                <div>Format</div>
+            <h2 class="generator__customization">Size</h2>
+            <div class="generator__customization__btns grid">
+                <button class="generator__customization__btn">50x50</button>
+                <button class="generator__customization__btn">100x100</button>
+                <button class="generator__customization__btn">200x200</button>
+                <button class="generator__customization__btn">300x300</button>
             </div>
         </article>
+
+        <article>
+            <h2 class="generator__customization">Color</h2>
+            <div class="generator__customization__btns grid">
+                <button class="generator__customization__btn">Black</button>
+                <button class="generator__customization__btn">Blue</button>
+                <button class="generator__customization__btn">Green</button>
+                <button class="generator__customization__btn">Red</button>
+            </div>
+        </article>
+
+        <article>
+            <h2 class="generator__customization">Format</h2>
+            <div class="generator__customization__btns grid">
+                <button class="generator__customization__btn">png</button>
+                <button class="generator__customization__btn">jpg</button>
+                <button class="generator__customization__btn">jpeg</button>
+                <button class="generator__customization__btn">svg</button>
+            </div>
+        </article>
+
+        <button class="generator__btn">Confirm</button>
+       </div>
+       
     </section>
 
 
