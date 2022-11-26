@@ -101,6 +101,7 @@ body {
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    
 }
 
 
@@ -436,3 +437,30 @@ input[type="url"]:focus {
     color: red;
     background-color: red;
 }
+.size_wrapper,
+.radio,
+.form-colors {
+    width: 100%;
+}
+
+select {
+    width: 100%;
+    border: 0;
+    padding: 0.3rem;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary5);
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary4);
+}
+
+.form {
+position: relative;
+
+}
+
