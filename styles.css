@@ -438,7 +438,7 @@ input[type="url"]:focus {
 }
 
 .why__qrnow__wrapper {
-    padding-block: 3rem;
+    padding-block: 6rem;
 }
 
 .why__qrnow__cards {
@@ -482,4 +482,23 @@ input[type="url"]:focus {
 
 .faq {
     background-color: var(--gray1);
+    padding-block: 6rem;
+}
+
+.faq__wrapper {
+    display: grid;
+    gap: 1.3rem;
+}
+
+.faq__wrapper__title {
+    font-weight: bold;
+}
+
+.faq__wrapper__question {
+padding-block: 1rem;
+}
+
+.faq__wrapper__question__answer {
+    opacity: 0.8;
+    line-height: 1.8;
 }
