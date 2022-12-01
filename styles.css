@@ -502,3 +502,53 @@ padding-block: 1rem;
     opacity: 0.8;
     line-height: 1.8;
 }
+
+
+.footer {
+    background-color: var(--primary9);
+    padding-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    color: white;
+}
+
+.fa-github,
+.fa-twitter,
+.fa-facebook,
+.fa-instagram {
+    color: var(--primary5);
+}
+
+
+.footer__icons {
+    display: grid;
+    align-items: flex-end;
+ 
+}
+
+.footer__icons__socials {
+    display: flex;
+    gap: 0.8rem;
+}
+
+
+
+.footer__copyrights {
+    display: grid;
+    justify-content: end;
+     color: var(--gray1);
+     
+     
+}
+
+.footer__copyrights {
+    
+    justify-self: end;
+}
+
+.footer__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.5;
+}
