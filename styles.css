@@ -480,6 +480,8 @@ input[type="url"]:focus {
     max-width: 33ch;
 }
 
+/* Frequently asked questions FAQ */
+
 .faq {
     background-color: var(--gray1);
     padding-block: 6rem;
@@ -490,15 +492,16 @@ input[type="url"]:focus {
     gap: 1.3rem;
 }
 
-.faq__wrapper__title {
+.faq__title {
     font-weight: bold;
 }
 
-.faq__wrapper__question {
+.faq__question {
 padding-block: 1rem;
+font-size: var(--fs-400);
 }
 
-.faq__wrapper__question__answer {
+.faq__question-answer {
     opacity: 0.8;
     line-height: 1.8;
 }
@@ -511,9 +514,6 @@ padding-block: 1rem;
     padding-bottom: 0.8rem;
     color: white;
 }
-
-
-
  
 .footer__wrapper {
     display: flex;
@@ -522,6 +522,7 @@ padding-block: 1rem;
     opacity: 0.5;
     gap: 1rem;
 }
+
 @media (min-width: 45em) {
     .footer__wrapper {
         display: grid;
