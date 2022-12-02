@@ -331,12 +331,9 @@ main {
     padding-block: 3.4rem;
 }
 
-
 .hero__inner {
     padding: 5rem 0;
- 
 }
-
 
 .hero__inner__title {
     line-height: 1;
@@ -352,13 +349,24 @@ main {
     text-align: center;
    
 }
-
 .hero__inner__form {
     display: grid;
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 0.8rem;
     margin-left: 0.5rem;
 }
+
+@media (min-width: 45em) {
+    .hero__inner__form {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        grid-template-rows: 1fr;
+        gap: 0.8rem;
+        margin-left: 0.5rem;
+    }
+}
+
 .hero__inner__form__input {
     width: 100%;
     background-color: var(--gray1);
@@ -390,10 +398,11 @@ input[type="url"]:focus {
 .hero__inner__form-btn {
     background-image: var(--primary-gradient);
     color: white;
-
+    width: 100%;
     padding: 1.8rem 0.6rem;
     border-radius: 0;
     font-size: var(--fs-500);
+    
 }
 
 .hero__control {
@@ -406,8 +415,13 @@ input[type="url"]:focus {
     grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
     align-items: center;
-    
-    margin-left: 2rem;
+    margin-left: 0.6rem;
+}
+
+@media (min-width: 45em) {
+    .hero__settings {
+        margin-left: 2rem;
+    }
 }
 .fa-gear, 
 .fa-xmark {
