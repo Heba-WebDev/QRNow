@@ -431,6 +431,7 @@ input[type="url"]:focus {
    
 }
 
+/* Why QRNow */
 
 .why__qrnow {
     color: var(--primary9);
@@ -441,23 +442,50 @@ input[type="url"]:focus {
     padding-block: 6rem;
 }
 
-.why__qrnow__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.why__qrnow__card {
-    padding-top: 2.5rem;
-    display: grid;
-    gap: 1rem;
-}
-
 .why__qrnow__title {
+    text-align: center;
     font-weight: bold;
 }
 
 
-.why__qrnow__card__icon {
+@media (min-width: 45em) {
+    .why__qrnow__title {
+        text-align: left;
+    }
+}
+
+.why__qrnow__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+@media (min-width: 45em)  {
+    .why__qrnow__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+}
+
+
+.why__qrnow__card {
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 45em)  {
+    .why__qrnow__card {
+        padding-top: 2.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+}
+
+
+.why__qrnow__card-icon {
     background-color: var(--primary3);
     height: 50px;
     width: 50px;
@@ -465,6 +493,13 @@ input[type="url"]:focus {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    margin: 0 auto;
+}
+
+@media (min-width: 45em)  {
+    .why__qrnow__card-icon {
+        margin: 0;
+    }
 }
 
 .fa-money-bill-1,
@@ -473,12 +508,25 @@ input[type="url"]:focus {
     color: var(--gray1);
 }
 
-.why__qrnow__card__title {
+.why__qrnow__card-title {
     font-weight: bold;
+    text-align: center;
+    font-size: var(--fs-600);
 }
-.why__qrnow__card__p {
-    max-width: 33ch;
+
+@media (min-width: 45em) {
+    .why__qrnow__card-title {
+        text-align: left;
+        font-size: var(--fs-500);
+    }
 }
+
+@media (min-width: 45em) {
+    .why__qrnow__card-p {
+        max-width: 33ch;
+    }
+}
+
 
 /* Frequently asked questions FAQ */
 
