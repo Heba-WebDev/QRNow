@@ -436,6 +436,7 @@ main {
 
 .hero__inner {
     padding: 5rem 0;
+    position: relative;
 }
 
 .hero__inner__title {
@@ -761,3 +762,179 @@ cursor: pointer;
 }
 
 
+.cutomiztion.open {
+    background-color: white;
+    color: var(--primary8);
+    padding: 2rem;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+   right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cutomiztion.close {
+    display: none;
+}
+
+.cutomiztion__title {
+    font-weight: 500;
+    padding-block: 0.5rem;
+}
+
+.cutomiztion__color,
+.cutomiztion__format,
+.cutomiztion__size {
+    padding-block: 1rem;
+}
+
+.cutomiztion__color,
+.cutomiztion__format,
+.cutomiztion__size {
+    display: grid;
+    gap: 1rem;
+}
+
+.cutomiztion__color__title,
+.cutomiztion__format__title,
+.cutomiztion__size__title 
+{
+ 
+    font-weight: 500;
+    font-size: var(--fs-400);
+}
+.cutomiztion__color__inner,
+.cutomiztion__format__inner,
+.cutomiztion__size__inner {
+gap: 1rem;
+margin-left: 0.5rem;
+}
+
+.cutomiztion__color__inner-option,
+.cutomiztion__format__inner-option,
+.cutomiztion__size__inner-option {
+    display: flex;
+    background-color: var(--accent-green1);
+    color: var(--gray8);
+    padding: 0.5rem 1.5rem;
+    width: 25%;
+    justify-content: center;
+}
+
+.cutomiztion__color__inner-option > *,
+.cutomiztion__format__inner-option > *,
+.cutomiztion__size__inner-option > * {
+    display: flex;
+    justify-content: center;
+}
+
+
+ /* .cutomiztion__color__inner-option >  input:checked + label{
+    border: none;
+    outline: 2px solid black;
+}  */
+
+.cutomiztion__color__inner-option > input,
+.cutomiztion__format__inner-option > input,
+.cutomiztion__size__inner-option > input {
+    display: none;
+}
+
+.cutomiztion__color__inner-option:has(input:checked+label) {
+    background-color: var(--accent-green3);
+    color: var(--gray8);
+}
+
+.cutomiztion__format__inner-option:has(input:checked+label) {
+    background-color: var(--accent-green3);
+    color: var(--gray8);
+}
+
+.cutomiztion__size__inner-option:has(input:checked+label) {
+    background-color: var(--accent-green3);
+    color: var(--gray8);
+}
+
+/* label[for="black"] {
+    width: auto;
+}
+
+.black {
+    background-color: black;
+    color: black;
+    padding-inline: 1.5rem;
+    padding-block: 0.4rem;
+}
+
+.blackHex {
+    padding-inline: 0.4rem;
+    padding-block: 0.4rem;
+}
+
+label[for="black"] {
+    outline: 2px solid black;
+}
+
+.blue {
+    background-color: #12128D;
+    color: #12128D;
+    padding-inline: 1.5rem;
+    padding-block: 0.4rem;
+}
+
+.blueHex {
+    padding-inline: 0.4rem;
+    padding-block: 0.4rem;
+}
+
+label[for="blue"] {
+    outline: 2px solid #12128D;
+}
+.green {
+    padding-inline: 1.5rem;
+    background-color: #228B22;
+    color: #228B22;
+    padding-block: 0.4rem;
+}
+
+.greenHex {
+    padding-inline: 0.4rem;
+    padding-block: 0.4rem;
+}
+
+label[for="green"] {
+    outline: 2px solid #228B22;
+}
+
+.red {
+    padding-inline: 1.5rem;
+    background-color: #DC143C;
+    color: #DC143C;
+    padding-block: 0.4rem;
+}
+
+.redHex {
+    padding-inline: 0.4rem;
+    padding-block: 0.4rem;
+}
+
+label[for="red"] {
+    outline: 2px solid #DC143C;
+} */
+
+.customization__title__close {
+    align-content: center;
+    justify-content: space-between;
+}
+.customization__close {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary8);
+    opacity: 1;
+}
+
+.fa-xmark {
+    color: var(--primary8);
+}

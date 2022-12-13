@@ -20,3 +20,22 @@ let date = new Date();
 let currentYear = date.getFullYear();
 setCurrentYear.innerHTML = currentYear;
 
+
+const customizationBtn = document.getElementById("customization");
+const customiztion = document.querySelector(".cutomiztion");
+const closeCustomiztion = document.querySelector("#customization__close");
+let isCustomiztionWindowOpen = false;
+
+customizationBtn.addEventListener('click', showCustomizationWindow);
+
+
+function showCustomizationWindow() {
+  if(isCustomiztionWindowOpen) {
+    customiztion.classList.remove('open');
+    customiztion.classList.add('close');
+  } else {
+    customiztion.classList.remove('close');
+    customiztion.classList.add('open');
+  }
+}
+
