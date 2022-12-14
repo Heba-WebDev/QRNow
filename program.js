@@ -23,7 +23,9 @@ setCurrentYear.innerHTML = currentYear;
 
 const customizationBtn = document.getElementById("customization");
 const customiztion = document.querySelector(".cutomiztion");
-const closeCustomiztion = document.querySelector("#customization__close");
+const closeCustomiztion = document.querySelector(".customization__close");
+closeCustomiztion.addEventListener('click', closeCustomizationWindow);
+
 let isCustomiztionWindowOpen = false;
 
 customizationBtn.addEventListener('click', showCustomizationWindow);
@@ -39,3 +41,46 @@ function showCustomizationWindow() {
   }
 }
 
+function closeCustomizationWindow() {
+ customiztion.classList.toggle("close")
+ customiztion.classList.toggle("open")
+}
+
+
+
+//URL regex that starts with HTTP or HTTPS
+const regex1 = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+//URL regex that doesn’t start with HTTP or HTTPS 
+const regex2 = /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+
+
+const url = document.getElementById("url");
+const urlSubmitBtn = document.querySelector("#urlSubmit");
+const urlWrapper = document.querySelector(".hero__inner__form__input");
+const errorMessage = document.querySelector(".hero__inner__form__input-error__message");
+
+let validURL;
+urlSubmitBtn.addEventListener('click', getTheURL)
+
+function getTheURL() {
+
+  if(regex1.test(url.value) || regex2.test(url.value)) {
+    
+    validURL = url.value;
+    console.log(validURL)
+  } else {
+    urlWrapper.classList.add("error");
+    errorMessage.classList.add("show")
+    errorMessage.classList.remove("hide")
+    console.log('false')
+  }
+  
+}
+
+url.addEventListener('focus', removeErrorMessage);
+
+function removeErrorMessage() {
+  urlWrapper.classList.remove("error");
+  errorMessage.classList.add("hide")
+  errorMessage.classList.remove("show")
+}

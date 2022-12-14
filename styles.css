@@ -472,13 +472,44 @@ main {
 }
 
 .hero__inner__form__input {
+    position: relative;
     width: 100%;
     background-color: var(--gray1);
     padding-inline: 0.5rem;
     display: grid;
     grid-template-columns: min-content 1fr;
     align-items: center;
-    
+}
+
+.hero__inner__form__input.error {
+    border: red solid 1px;
+}
+
+.hero__inner__form__input-error__message {
+    position: absolute;
+    top: -30%;
+    left:1%;
+    font-size: var(--fs-300);
+    color: red;
+    opacity: 0.7;
+}
+@media (min-width: 45em) {
+    .hero__inner__form__input-error__message  {
+        position: absolute;
+        top: -28%;
+        left:3.5%;
+        font-size: var(--fs-300);
+        color: red;
+        opacity: 0.7;
+    }
+}
+
+.hero__inner__form__input-error__message.show {
+    display: block;
+}
+
+.hero__inner__form__input-error__message.hide {
+    display: none;
 }
 
 .fa-link {
@@ -933,6 +964,7 @@ label[for="red"] {
     border: 0;
     color: var(--primary8);
     opacity: 1;
+    cursor: pointer;
 }
 
 .fa-xmark {
