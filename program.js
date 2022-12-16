@@ -59,23 +59,7 @@ const urlSubmitBtn = document.querySelector("#urlSubmit");
 const urlWrapper = document.querySelector(".hero__inner__form__input");
 const errorMessage = document.querySelector(".hero__inner__form__input-error__message");
 
-let validURL;
-urlSubmitBtn.addEventListener('click', getTheURL)
 
-function getTheURL() {
-
-  if(regex1.test(url.value) || regex2.test(url.value)) {
-    
-    validURL = url.value;
-    console.log(validURL)
-  } else {
-    urlWrapper.classList.add("error");
-    errorMessage.classList.add("show")
-    errorMessage.classList.remove("hide")
-    console.log('false')
-  }
-  
-}
 
 url.addEventListener('focus', removeErrorMessage);
 
@@ -83,4 +67,78 @@ function removeErrorMessage() {
   urlWrapper.classList.remove("error");
   errorMessage.classList.add("hide")
   errorMessage.classList.remove("show")
+}
+
+
+
+let size = document.getElementsByName('size');
+let color = document.getElementsByName('color');
+let format = document.getElementsByName('format');
+
+function getCheckedValue(values) {
+  let chosenValue;
+  for(let i = 0; i < values.length; i++) {
+    if(values[i].checked) chosenValue = values[i].value;
+  }
+  return chosenValue;
+}
+
+console.log(getCheckedValue(color), getCheckedValue(size), getCheckedValue(format));
+
+
+//let baseURL = `http://api.qrserver.com/v1/create-qr-code/?data=${validURL}&size=${getCheckedValue(size)}x${getCheckedValue(size)}&color=${getCheckedValue(color)}&format=${getCheckedValue(format)}`;
+
+
+let saveChangesBtn = document.querySelector(".customization__save");
+
+saveChangesBtn.addEventListener('click', saveChanges);
+
+function saveChanges() {
+  return getCheckedValue(color), getCheckedValue(size), getCheckedValue(format);
+}
+
+
+
+let qrcode = document.querySelector('.qrcode');
+let validURL;
+let code = document.querySelector(".qrcode__inner-img-src");
+urlSubmitBtn.addEventListener('click', getTheURL)
+
+function getTheURL() {
+
+  if(regex1.test(url.value) || regex2.test(url.value)) {
+    
+    validURL = url.value;
+    console.log(`http://api.qrserver.com/v1/create-qr-code/?data=${validURL}&size=${getCheckedValue(size)}x${getCheckedValue(size)}&color=${getCheckedValue(color)}&format=${getCheckedValue(format)}`)
+    code.src = `http://api.qrserver.com/v1/create-qr-code/?data=${validURL}&size=${getCheckedValue(size)}x${getCheckedValue(size)}&color=${getCheckedValue(color)}&format=${getCheckedValue(format)}`
+  } else {
+    urlWrapper.classList.add("error");
+    errorMessage.classList.add("show")
+    errorMessage.classList.remove("hide")
+    console.log('false')
+  }
+  
+  
+    showQrCode()
+  
+}
+
+function showQrCode() {
+  qrcode.classList.remove("hide");
+  qrcode.classList.add("show");
+}
+
+
+let clearURL = document.querySelector(".clear__url");
+
+clearURL.addEventListener('click', removeUrlAndImage);
+
+function removeUrlAndImage() {
+  url.value = "";
+  hideQrCode()
+}
+
+function hideQrCode() {
+  qrcode.classList.remove("show");
+  qrcode.classList.add("hide");
 }

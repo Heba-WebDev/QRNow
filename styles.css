@@ -919,8 +919,14 @@ margin-left: 0.5rem;
     cursor: pointer;
 }
 
-.qrcode {
+
+.qrcode.show {
+    display: auto;
     margin-top: 2.5rem;
+}
+
+.qrcode.hide {
+    display: none;
 }
 
 .qrcode__inner {
@@ -931,6 +937,10 @@ margin-left: 0.5rem;
     padding-bottom: 1rem;
 }
 
+.qrcode__inner-img {
+    display: flex;
+    justify-content: center;
+}
 .qrcode__inner-img img {
  padding: 0.8rem 0.8rem 2rem 0.8rem;
 
