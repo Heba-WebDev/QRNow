@@ -22,7 +22,7 @@ setCurrentYear.innerHTML = currentYear;
 
 
 const customizationBtn = document.getElementById("customization");
-const customiztion = document.querySelector(".cutomiztion");
+const customiztion = document.querySelector(".customization");
 const closeCustomiztion = document.querySelector(".customization__close");
 closeCustomiztion.addEventListener('click', closeCustomizationWindow);
 
@@ -56,8 +56,8 @@ const regex2 = /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0
 
 const url = document.getElementById("url");
 const urlSubmitBtn = document.querySelector("#urlSubmit");
-const urlWrapper = document.querySelector(".hero__inner__form__input");
-const errorMessage = document.querySelector(".hero__inner__form__input-error__message");
+const urlWrapper = document.querySelector(".hero__form__input");
+const errorMessage = document.querySelector(".hero__form__input-error__message");
 
 
 
@@ -101,7 +101,7 @@ function saveChanges() {
 
 let qrcode = document.querySelector('.qrcode');
 let validURL;
-let code = document.querySelector(".qrcode__inner-img-src");
+let code = document.querySelector(".qrcode__img-src");
 urlSubmitBtn.addEventListener('click', getTheURL)
 
 function getTheURL() {
@@ -129,7 +129,7 @@ function showQrCode() {
 }
 
 
-let clearURL = document.querySelector(".clear__url");
+let clearURL = document.querySelector("#clear__url");
 
 clearURL.addEventListener('click', removeUrlAndImage);
 
