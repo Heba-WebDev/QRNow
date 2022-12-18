@@ -543,7 +543,9 @@ input[type="url"]:focus {
     padding: 1.8rem 0.6rem;
     border-radius: 0;
     font-size: var(--fs-500);
+    cursor: pointer;
 }
+
 
 .hero__control {
     display: flex;
