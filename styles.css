@@ -760,7 +760,7 @@ margin-left: 0.5rem;
     }
 }
 
-.qrcode__btn__download {
+.qrcode__btn__download  {
     border: 0;
     background-color: var(--accent-green2);
     padding: 0.3rem 1rem;
@@ -771,6 +771,11 @@ margin-left: 0.5rem;
     cursor: pointer;
 }
 
+.qrcode__btn__download > a {
+    text-decoration: none;
+    color: var(--accent-green5);
+}
+
 .qrcode__btn__view {
     border: 0;
     background-color: transparent;
@@ -778,6 +783,11 @@ margin-left: 0.5rem;
     font-size: var(--fs-400);
     border-radius: 8px;
     cursor: pointer;
+}
+
+.qrcode__btn__view > a {
+    text-decoration: none;
+    color: var(--primary8);
 }
 
 /* Why QRNow */

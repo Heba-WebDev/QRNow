@@ -182,7 +182,7 @@
          </div>
 
          <div class="customization__size__option">
-            <input type="radio" id="threeHundred" name="size" value="350">
+            <input type="radio" id="threeHundredFifty" name="size" value="350">
             <label for="threeHundredFifty">
                <div>350x350</div>
             </label>
@@ -202,8 +202,12 @@
          <img class="qrcode__img-src" src="">
        </div>
        <div class="qrcode__btn">
-         <button class="qrcode__btn__download">Download</button>
-         <button class="qrcode__btn__view">View in orginal size</button>
+         <button class="qrcode__btn__download">
+            <a download="qr-code" href="#" id="download">Download</a>
+         </button>
+         <button class="qrcode__btn__view">
+            <a href="#" target="_blank" id="view-full-size">View in orginal size</a>
+         </button>
        </div>
       </div>
    </div>
