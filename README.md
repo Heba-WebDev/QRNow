@@ -1,7 +1,6 @@
 # QRNow
 
 ## _A an application that generates QR codes_
-[Preview]() 
 ![Design preview for the QRNow application](./images/Preview.png)
 
 ## Live demo
