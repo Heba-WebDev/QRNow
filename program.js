@@ -139,7 +139,7 @@ async function downloadImage(imageSrc) {
   download.download = 'qr-code';
 }
 
-document.addEventListener('click', () => fetchURL ? downloadImage(fetchURL) : null)
+document.addEventListener('click', () => fetchURL ? downloadImage(fetchURL) : null);
 
 
 function showQrCode() {
