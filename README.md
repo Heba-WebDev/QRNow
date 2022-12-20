@@ -4,7 +4,7 @@
 
 
 ## Live demo
-[Link](https://nodejs.org/) 
+[Link](/images/Preview.png) 
 
 ## Features
 - Free application 

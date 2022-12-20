@@ -139,12 +139,17 @@ async function downloadImage(imageSrc) {
   download.download = 'qr-code';
 }
 
-download.addEventListener('click', () => fetchURL ? downloadImage(fetchURL) : null)
+document.addEventListener('click', () => fetchURL ? downloadImage(fetchURL) : null)
 
 
 function showQrCode() {
   qrcode.classList.remove("hide");
   qrcode.classList.add("show");
+}
+
+function hideQrCode() {
+  qrcode.classList.remove("show");
+  qrcode.classList.add("hide");
 }
 
 
@@ -157,16 +162,10 @@ function removeUrlAndImage() {
   hideQrCode();
 }
 
-function hideQrCode() {
-  qrcode.classList.remove("show");
-  qrcode.classList.add("hide");
-}
-
 function showErrorMessage() {
   errorMessage.classList.add("show");
   errorMessage.classList.remove("hide");
 }
-
 
 
 //set current year in the copyright in the footer 
