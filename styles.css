@@ -39,13 +39,13 @@
     
   /* font-sizes */
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
-  --fs-800: 3.5rem;
-  --fs-700: 1.5rem;
-  --fs-600: 1rem;
-  --fs-500: 1rem;
-  --fs-400: 0.9375rem;
-  --fs-300: 1rem;
-  --fs-200: 0.875rem;
+  --fs-800: 2.5rem;
+  --fs-700: 2rem;
+  --fs-600: 1.4rem;
+  --fs-500: 1.2rem;
+  --fs-400: 1rem;
+  --fs-300: 0.7rem;
+  --fs-200: 0.475rem;
 
   /* font-weight */
   --fw-bold: 500;
@@ -68,11 +68,11 @@
 @media (min-width: 45em) {
     :root {
         /* font-sizes */
-        --fs-800: 6.25rem;
-        --fs-700: 3.5rem;
-        --fs-600: 2rem;
-        --fs-500: 1.75rem;
-        --fs-400: 1.125rem;
+          --fs-800: 5.25rem;
+          --fs-700: 2.3rem;
+          --fs-600: 1.6rem;
+          --fs-500: 1.3rem;
+          --fs-400: 1rem;
     }
 }
 
@@ -148,7 +148,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .flex {
     display: flex;
-
 }
 
 .grid {
@@ -162,19 +161,17 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-@media (min-width: 50rem) {
+@media (min-width: 45rem) {
     .container {
-        padding-inline: 2rem;
+        padding-inline: 5rem;
     }
 }
 
-@media (min-width: 50rem) {
-    .container--desktop {
-        max-width: 65em;
-        padding-inline: 2.5rem;
+@media (max-width: 335px) {
+    .container {
+        padding-inline: 0.5rem;
     }
 }
-
 
 .desktop {
     display: none;
@@ -305,8 +302,10 @@ body {
     width: 100%;
 }
 
-.header__logo {
+.header__logo > a {
      font-size: var(--fs-600);
+     text-decoration: none;
+     color: inherit;
 }
 
 .navbar__btn {
@@ -405,7 +404,6 @@ body {
         gap: 3rem;
         text-align: left;
     }
-
 }
 
 
@@ -478,6 +476,12 @@ main {
     }
 }
 
+@media (max-width: 400px) {
+    .hero__form {
+        margin-left: 0rem;
+    }
+}
+
 .hero__form__input {
     position: relative;
     width: 100%;
@@ -486,6 +490,13 @@ main {
     display: grid;
     grid-template-columns: min-content 1fr;
     align-items: center;
+}
+@media (max-width: 400px){
+    .hero__form__input {
+        padding-inline: 0rem;
+        overflow: hidden;
+        display: grid;
+    }
 }
 
 .hero__form__input.error {
@@ -531,6 +542,13 @@ input[type="url"] {
     border-radius: 8px;
     font-size: var(--fs-500);
 }
+
+@media (max-width: 400px) {
+    input[type="url"] {
+        margin-left: 0rem;
+        padding: 0.2rem;
+    }
+}
  
 input[type="url"]:focus {
     border: 0;
@@ -550,7 +568,7 @@ input[type="url"]:focus {
 
 .hero__control {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     margin-top: 0.6rem;
 }
 @media (min-width: 45em) {
@@ -559,16 +577,19 @@ input[type="url"]:focus {
     }
 }
 
-.hero__control__settings {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
+.hero__control__settings{
+    display: flex;
+    gap: 0;
     align-items: center;
-    margin-left: 0.6rem;
+    margin-left: 0.4rem;
 }
 
 @media (min-width: 45em) {
     .hero__control__settings {
+        grid-template-columns: 1fr 1fr;
         margin-left: 2rem;
+        gap: 0.2rem;
+        margin-top: 0;
     }
 }
 
@@ -579,12 +600,26 @@ input[type="url"]:focus {
     cursor: pointer;
 }
 
+.hero__control__clear {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+
+@media (min-width: 45em) {
+    .hero__control__clear {
+        gap: 0.1rem;
+    }
+}
+
 
 .fa-gear, 
 .fa-xmark {
     color: var(--gray5);
     margin-right: 0.2rem;
 }
+
 
 .hero__control__settings > small {
     text-decoration: underline;
@@ -610,15 +645,13 @@ input[type="url"]:focus {
     top: 0;
     width: 100%;
     height: auto;
-    
 }
 @media (min-width: 45em)  {
     .customization.open  {
         top: -1rem;
     }
-
-   
 }
+
 .customization.close {
     display: none;
 }
@@ -709,7 +742,7 @@ margin-left: 0.5rem;
     cursor: pointer;
 }
 
-.fa-xmark {
+.customization__close > .fa-solid  {
     color: var(--primary8);
 }
 
@@ -973,6 +1006,11 @@ padding-bottom: 0.8rem;
     }
 }
 
+.footer__logo > p > a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .footer__socials {
     display: flex;
     justify-content: center;
@@ -983,13 +1021,14 @@ padding-bottom: 0.8rem;
 }
 
 @media (min-width: 45em) {
-    .footer__socials {
+    .footer__socials  {
         display: flex;
         justify-content: end;
         align-items: flex-end;
         gap: 2rem;
         width: 100%;
         height: 50%;
+        align-self: flex-end;
     }
 }
 
