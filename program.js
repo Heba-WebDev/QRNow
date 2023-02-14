@@ -98,6 +98,7 @@ let saveChangesBtn = document.querySelector(".customization__save");
 saveChangesBtn.addEventListener('click', saveChanges);
 
 function saveChanges() {
+  closeCustomizationWindow();
   return getCheckedValue(color), getCheckedValue(size), getCheckedValue(format);
 }
 
@@ -160,6 +161,7 @@ clearURL.addEventListener('click', removeUrlAndImage);
 function removeUrlAndImage() {
   url.value = "";
   hideQrCode();
+  removeErrorMessage();
 }
 
 function showErrorMessage() {

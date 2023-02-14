@@ -101,7 +101,6 @@ body {
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    /* background-color: rgba(10,10,10,.86); */
 }
 
 
@@ -389,6 +388,7 @@ body {
 @media (max-width: 45em) {
     .navbar__list:not(.open) {
         display: none;
+        animation: fade-out 500ms ease-in-out;
     }
     .navbar__list {
         display: flex;
@@ -409,6 +409,10 @@ body {
         gap: 3rem;
         text-align: left;
     }
+}
+
+.navbar__list.open {
+    animation: fade-in 500ms forwards;
 }
 
 
@@ -650,6 +654,7 @@ input[type="url"]:focus {
     top: 0;
     width: 100%;
     height: auto;
+    animation: fade-in 500ms forwards;
 }
 @media (min-width: 45em)  {
     .customization.open  {
@@ -657,8 +662,31 @@ input[type="url"]:focus {
     }
 }
 
+
 .customization.close {
     display: none;
+    animation: fade-out 500ms ease-in-out;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    }
+
+    0% {
+        opacity: 1;
+    }
 }
 
 .customization__title {
@@ -683,14 +711,14 @@ input[type="url"]:focus {
 .customization__format__title,
 .customization__size__title 
 {
- 
     font-weight: 500;
     font-size: var(--fs-400);
 }
 .customization__color__inner,
 .customization__format__inner,
 .customization__size__inner {
-gap: 1rem;
+grid-template-columns: repeat( auto-fit, minmax(90px, 1fr) );
+gap: 0.6rem;
 margin-left: 0.5rem;
 }
 
@@ -700,23 +728,39 @@ margin-left: 0.5rem;
     display: flex;
     background-color: var(--accent-green1);
     color: var(--gray8);
-    padding: 0.5rem 1.5rem;
-    width: 25%;
+    width: auto;
     justify-content: center;
 }
 
-.customization__color__option > *,
-.customization__format__option > *,
-.customization__size__option > * {
+.customization__color__option > label,
+.customization__format__option > label,
+.customization__size__option > label {
     display: flex;
     justify-content: center;
+    align-items: center;
+   max-width: 5rem;
+   height: 35px;
 }
 
+.customization__color__option  > label > div,
+.customization__format__option > label > div,
+.customization__size__option > label > div {
+    padding: 0.5rem;
+   text-align: center;
+   width: 100%;
+}
 
 .customization__color__option > input,
 .customization__format__option > input,
 .customization__size__option > input {
     display: none;
+}
+
+
+
+
+label > div:hover {
+    cursor: pointer;
 }
 
 .customization__color__option:has(input:checked+label) {
@@ -752,14 +796,26 @@ margin-left: 0.5rem;
 }
 
 .customization__save {
-    width: 50%;
+    width: 100%;
     border: 1px solid var(--primary5);
     background-color: transparent;
     color: var(--primary5);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     justify-self: center;
     padding-block: 0.4rem;
     cursor: pointer;
+}
+
+@media (min-width:30rem) {
+    .customization__save {
+        width: 50%;
+    }
+}
+
+.customization__save:hover,
+.customization__save:focus {
+    background-color: var(--primary5);
+    color: white;
 }
 
 .qrcode.show {
